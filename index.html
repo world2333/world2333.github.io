@@ -151,41 +151,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2018/02/18/hello-world/">
-                Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2018-02-18</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/2018/02/18/如何搭建一个Minecraft服务器-1/">
                 如何搭建一个Minecraft服务器
             </a>
@@ -205,30 +170,9 @@
 
     
         <div class="content">
-            <p>想起来我玩Minecraft也有多年了，服务器我也搭建过。所以我想今天我写一个搭建Minecraft服务器的教程吧，说不定有人用得到。。。。</p>
-<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ 一台云服务器</span><br><span class="line">$ Ubuntu</span><br><span class="line">$ cpu 1核</span><br><span class="line">$ RAM 1G</span><br></pre></td></tr></table></figure>
-<h3 id="所用工具（软件）"><a href="#所用工具（软件）" class="headerlink" title="所用工具（软件）"></a>所用工具（软件）</h3><p>为了连接上云服务器，我需要一个支持ssh协议的软件<br>Windows下的话可以选用 xshell（免费，直接百度就有，配有中文）<br><a href="https://www.netsarang.com/products/xsh_overview.html" target="_blank" rel="noopener">xshell官网</a></p>
-<p>后续我们需要将Minecraft的服务端（后缀为.jar)，所以我们需要一个FTP协议的传输工具<br>Windows下可以用FileZilla（开源，免费，中文）<br><a href="https://filezilla-project.org/" target="_blank" rel="noopener">FileZilla官网</a><br>这网站我我很卡，所以我直接百度下载的2333。</p>
-<h3 id="Minecraft服务端选择"><a href="#Minecraft服务端选择" class="headerlink" title="Minecraft服务端选择"></a>Minecraft服务端选择</h3><p>要我直接介绍我是说不清楚的，毕竟版本太多了，所以这里我引用一位知乎用户的回答作为讲解吧。<a href="https://www.zhihu.com/question/46881255/answer/109917528" target="_blank" rel="noopener">文章地址</a><br>请各位认真看这位用户讲解，然后选择自己认为适合的服务端。</p>
-<h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><p>需要的东西我们都准备的差不多了，那么我们就开始干吧。<br>第一步当然是连接到我们的云服务器了<br>打开你的xshell，点击新站点，输入你服务器提供商给你的信息，然后连接，成功后一般会有提示字符。</p>
-<h3 id="基础环境部署"><a href="#基础环境部署" class="headerlink" title="基础环境部署"></a>基础环境部署</h3><p>我们是做Minecraft服务器，而他是java写的，所以当然免不了java啦。<br>输入下列指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br></pre></td></tr></table></figure></p>
-<p>这是用来检查java版本的命令，如果显示出了目前版本就证明你已经安装了，就可以去下一步了。<br>但如果没有安装，请输入下列指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install oracle-java8-installer</span><br></pre></td></tr></table></figure></p>
-<p>如果第一条指令无法找到请运行下面这行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install software-properties-common</span><br></pre></td></tr></table></figure></p>
-<p>等安装完毕后我们来看一下是否成功<br>输入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br></pre></td></tr></table></figure></p>
-<p>查看结果。</p>
-<p>java安装完毕后，我们还需安装一个screen的软件包，毕竟我们不可能随时保持xshell打开<br>直接输入screen指令，一般都会配有的，没有的话手动安装一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install screen</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://man.linuxde.net/screen" target="_blank" rel="noopener">screen命令</a></p>
-<h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>在xshell中输入下列指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir Minecraft</span><br></pre></td></tr></table></figure></p>
-<p>然后打开FileZilla连接至你的服务器（FTP协议连接不上时可能是服务器不支持，请选择sftp），当软件右侧出现文件列表时证明已经连接，双击进入Minecraft文件夹，将你选择的Minecraft服务器上传到服务器上（软件左边是你的本地文件列表，传输时右键文件就有选项，或者直接拖到右边即可。）当确定上传完毕后回到xshell。输入以下指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Minecraft </span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure></p>
-<p>查看输出结果，如果正常会显示你的服务器名字（第一行命令是进入Minecraft文件夹，第二行是列出当前目录的文件）。<br>之后我们输入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure></p>
-<p>这是回到上层目录的指令。然后我们启动screen这个软件<br>直接输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ screen</span><br></pre></td></tr></table></figure></p>
-<p>如果软件成功启动，你会发现你的xshell之前输入的命令记录没了，因为你进了个新的会话。<br>接着输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Minecraft </span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure></p>
-<p>确定服务端文件列出来之后，我们在输入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo java -Xms<span class="comment"># -Xmx# -jar name.jar nogui</span></span><br></pre></td></tr></table></figure></p>
-<p>这里解释一下命令的意思</p>
-<h3 id="Xms-初始启动分配的内存（-Xms2048m）"><a href="#Xms-初始启动分配的内存（-Xms2048m）" class="headerlink" title="-Xms# - 初始启动分配的内存（-Xms2048m）"></a>-Xms# - 初始启动分配的内存（-Xms2048m）</h3><h3 id="Xmx-最大分配的内存（-Xmx3096m）"><a href="#Xmx-最大分配的内存（-Xmx3096m）" class="headerlink" title="-Xmx# - 最大分配的内存（-Xmx3096m）"></a>-Xmx# - 最大分配的内存（-Xmx3096m）</h3><h3 id="name–-下载的Minecraft服务端名字-jar前面的部分"><a href="#name–-下载的Minecraft服务端名字-jar前面的部分" class="headerlink" title="name– 下载的Minecraft服务端名字.jar前面的部分"></a>name– 下载的Minecraft服务端名字.jar前面的部分</h3><h3 id="nogui-–-用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除-nogui-选项。"><a href="#nogui-–-用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除-nogui-选项。" class="headerlink" title="nogui – 用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除 nogui 选项。"></a>nogui – 用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除 nogui 选项。</h3><p>等待出现done！的时候，就说明服务器启动完毕了。</p>
-<h3 id="登录到服务器"><a href="#登录到服务器" class="headerlink" title="登录到服务器"></a>登录到服务器</h3><p>打开Minecraft客户端，在多人游戏里填入你的服务器公网ip，然后就可以进入服务器了（如果没信号，请确定你的服务器已经启动，而且服务器网络类型不要是专享网络，如果是请自信配置）。<br>那么本教程到此结束，祝大家游戏愉快。</p>
-
+            <p>想起来我玩Minecraft也有多年了，服务器我也搭建过。所以我想今天我写一个搭建Minecraft服务器的教程吧，说不定有人用得到。。。。<br>
         </div>
+        <a href="/2018/02/18/如何搭建一个Minecraft服务器-1/" class="read-more">Read More</a>
     
 
 </div>
@@ -260,10 +204,6 @@
     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
         <h2>Recent Posts</h2>
         <ul>
-            
-            <li>
-                <a class="footer-post" href="/2018/02/18/hello-world/">Hello World</a>
-            </li>
             
             <li>
                 <a class="footer-post" href="/2018/02/18/如何搭建一个Minecraft服务器-1/">如何搭建一个Minecraft服务器</a>

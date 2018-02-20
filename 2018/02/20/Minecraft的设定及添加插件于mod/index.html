@@ -175,24 +175,27 @@
 <h3 id="本章用到的软件与方法"><a href="#本章用到的软件与方法" class="headerlink" title="本章用到的软件与方法"></a>本章用到的软件与方法</h3><p>修改文件，可以选用vim软件，直接就可以在xshell内修改文件<a href="http://blog.csdn.net/yu870646595/article/details/52045150" target="_blank" rel="noopener">vim指令(博客园）</a><a href="http://www.vim.org/" target="_blank" rel="noopener">vim 官网</a><br>第二种方法就是直接使用FileZilla将所需文件弄到本地，然后在Windows下修改，然后上传到服务器即可。</p>
 <h3 id="服务器无法启动"><a href="#服务器无法启动" class="headerlink" title="服务器无法启动"></a>服务器无法启动</h3><p>服务器在启动时提示 </p>
 <ul>
-<li>You need to agree to the EULA in order to run the server. Go to eula.txt for more info.<br>那么就照他说的做，打开服务器内的Minecraft服务端文件夹，找到eula.txt文件，然后修改里面最后一行，改为eula=true，保存退出即可启动</li>
+<li>You need to agree to the EULA in order to run the server. Go to eula.txt for more info.</li>
 </ul>
+<p>那么就照他说的做，打开服务器内的Minecraft服务端文件夹，找到eula.txt文件，然后修改里面最后一行，改为eula=true，保存退出即可启动</p>
 <h3 id="盗版用户登录"><a href="#盗版用户登录" class="headerlink" title="盗版用户登录"></a>盗版用户登录</h3><p>既然玩Minecraft服务器了，最好还是买个正版2333（国际版，不是网易的）。当然，我想不可能每个人都有正版，那么没正版是不是进不去我们所开的服务器了呢？不是的，请按照接下来说的修改服务器配置文件即可使盗版玩家登录服务器。<br>在Minecraft服务端夹内找到server.properties文件，修改里面的</p>
 <ul>
 <li>online-mode=true</li>
 </ul>
 <p>这一行，改为</p>
 <ul>
-<li>online-mode=false<br>保存，重启Minecraft服务器即可。</li>
+<li>online-mode=false</li>
 </ul>
+<p>保存，重启Minecraft服务器即可。</p>
 <h3 id="命令方块启用"><a href="#命令方块启用" class="headerlink" title="命令方块启用"></a>命令方块启用</h3><p>修改server.properties文件里面的这一行</p>
 <ul>
 <li>enable-command-block=false</li>
 </ul>
 <p>改为</p>
 <ul>
-<li>enable-command-block=true<br>保存重启Minecraft服务器即可。</li>
+<li>enable-command-block=true</li>
 </ul>
+<p>保存重启Minecraft服务器即可。</p>
 <h3 id="服务器最大人数修改"><a href="#服务器最大人数修改" class="headerlink" title="服务器最大人数修改"></a>服务器最大人数修改</h3><p>照样修改server.properties文件，修改这一行</p>
 <ul>
 <li>max-players=20</li>

@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="world的小站"/>
+        <meta property="og:title" content="Minecraft服务器的设定及添加插件与mod"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Minecraft - world的小站</title>
+    <title>Minecraft服务器的设定及添加插件与mod - world的小站</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -131,9 +131,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -141,34 +139,109 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">#Minecraft</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2018/02/20/Minecraft的设定及添加插件于mod/">
-        <span class="archive-date">
-            Feb 2018
-        </span>
-        Minecraft服务器的设定及添加插件与mod
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/02/20/Minecraft的设定及添加插件于mod/">
+                Minecraft服务器的设定及添加插件与mod
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-02-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Minecraft/">Minecraft</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>大家好，通过上一篇文章我相信大家一定搭建好了自己Minecraft服务器，可是可能存在一些问题，比如盗版用户无法登录，命令方块无法使用，服务器最大人数太小等等。那么在这篇文章里，你都会得到解决（大概吧）。<br><a id="more"></a></p>
+<h3 id="本章用到的软件与方法"><a href="#本章用到的软件与方法" class="headerlink" title="本章用到的软件与方法"></a>本章用到的软件与方法</h3><p>修改文件，可以选用vim软件，直接就可以在xshell内修改文件<a href="http://blog.csdn.net/yu870646595/article/details/52045150" target="_blank" rel="noopener">vim指令(博客园）</a><a href="http://www.vim.org/" target="_blank" rel="noopener">vim 官网</a><br>第二种方法就是直接使用FileZilla将所需文件弄到本地，然后在Windows下修改，然后上传到服务器即可。</p>
+<h3 id="服务器无法启动"><a href="#服务器无法启动" class="headerlink" title="服务器无法启动"></a>服务器无法启动</h3><p>服务器在启动时提示 </p>
+<ul>
+<li>You need to agree to the EULA in order to run the server. Go to eula.txt for more info.<br>那么就照他说的做，打开服务器内的Minecraft服务端文件夹，找到eula.txt文件，然后修改里面最后一行，改为eula=true，保存退出即可启动</li>
+</ul>
+<h3 id="盗版用户登录"><a href="#盗版用户登录" class="headerlink" title="盗版用户登录"></a>盗版用户登录</h3><p>既然玩Minecraft服务器了，最好还是买个正版2333（国际版，不是网易的）。当然，我想不可能每个人都有正版，那么没正版是不是进不去我们所开的服务器了呢？不是的，请按照接下来说的修改服务器配置文件即可使盗版玩家登录服务器。<br>在Minecraft服务端夹内找到server.properties文件，修改里面的</p>
+<ul>
+<li>online-mode=true</li>
+</ul>
+<p>这一行，改为</p>
+<ul>
+<li>online-mode=false<br>保存，重启Minecraft服务器即可。</li>
+</ul>
+<h3 id="命令方块启用"><a href="#命令方块启用" class="headerlink" title="命令方块启用"></a>命令方块启用</h3><p>修改server.properties文件里面的这一行</p>
+<ul>
+<li>enable-command-block=false</li>
+</ul>
+<p>改为</p>
+<ul>
+<li>enable-command-block=true<br>保存重启Minecraft服务器即可。</li>
+</ul>
+<h3 id="服务器最大人数修改"><a href="#服务器最大人数修改" class="headerlink" title="服务器最大人数修改"></a>服务器最大人数修改</h3><p>照样修改server.properties文件，修改这一行</p>
+<ul>
+<li>max-players=20</li>
+</ul>
+<p>等号后的数字就是服务器最大人数。<br>修改后保存，重启服务器即可。</p>
+<h3 id="服务器标语修改"><a href="#服务器标语修改" class="headerlink" title="服务器标语修改"></a>服务器标语修改</h3><p>在Minecraft多人游戏选项中，你的服务器如果有信号，下部会显示一串标语<br>默认为A Minecraft Server，有人一定会说，这不够酷，我要改一下。<br>那我们就来改一下吧，修改server.properties文件（没错，还是它）内的这一行</p>
+<ul>
+<li>motd=A Minecraft Server</li>
+</ul>
+<p>等于号之后的就是标语，推荐输入English，中文有时有乱码。。。。<br>保存，重启服务器即可。</p>
+<h3 id="白名单开启"><a href="#白名单开启" class="headerlink" title="白名单开启"></a>白名单开启</h3><p>还是修改server.properties文件，找到</p>
+<ul>
+<li>white-list=false</li>
+</ul>
+<p>改为</p>
+<ul>
+<li>white-list=true</li>
+</ul>
+<p>保存重启服务器。然后在游戏中输入/whitelist add 玩家名给予该玩家白名单<br>或者在服务器文件white-list.txt里添加玩家名 多个玩家名要换行。</p>
+<h3 id="mod添加"><a href="#mod添加" class="headerlink" title="mod添加"></a>mod添加</h3><p>直接把mod本体和依赖上传到服务器的mods文件，然后重启服务器即可，建议一个个加，不然会爆炸2333.</p>
+<ul>
+<li>补充：如果删除mod后无法启动服务器，请尝试输入/fml confirm修复地图即可。</li>
+</ul>
+<h3 id="插件添加"><a href="#插件添加" class="headerlink" title="插件添加"></a>插件添加</h3><p>把插件本体和依赖上传到服务器plugins文件内，保存，重启服务器即可，还是建议一个个加，注意插件支持版本。。。。</p>
+<ul>
+<li>补充 插件指令使用存在权限，至于权限添加你找插件的网站会给的。</li>
+</ul>
+<p>本章到此结束，希望大家游戏愉快。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Minecraft/">#Minecraft</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2018/02/18/如何搭建一个Minecraft服务器-1/">
-        <span class="archive-date">
-            Feb 2018
-        </span>
-        如何搭建一个Minecraft服务器
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

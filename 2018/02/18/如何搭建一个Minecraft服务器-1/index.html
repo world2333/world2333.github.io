@@ -174,8 +174,8 @@
         <p>想起来我玩Minecraft也有多年了，服务器我也搭建过。所以我想今天我写一个搭建Minecraft服务器的教程吧，说不定有人用得到。。。。<br><a id="more"></a></p>
 <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ 一台云服务器</span><br><span class="line">$ Ubuntu</span><br><span class="line">$ cpu 1核</span><br><span class="line">$ RAM 1G</span><br></pre></td></tr></table></figure>
 <h3 id="所用工具（软件）"><a href="#所用工具（软件）" class="headerlink" title="所用工具（软件）"></a>所用工具（软件）</h3><p>为了连接上云服务器，我需要一个支持ssh协议的软件<br>Windows下的话可以选用 xshell（免费，直接百度就有，配有中文）<br><a href="https://www.netsarang.com/products/xsh_overview.html" target="_blank" rel="noopener">xshell官网</a></p>
-<p>后续我们需要将Minecraft的服务端（后缀为.jar)，所以我们需要一个FTP协议的传输工具<br>Windows下可以用FileZilla（开源，免费，中文）<br><a href="https://filezilla-project.org/" target="_blank" rel="noopener">FileZilla官网</a><br>这网站我我很卡，所以我直接百度下载的2333。</p>
-<h3 id="Minecraft服务端选择"><a href="#Minecraft服务端选择" class="headerlink" title="Minecraft服务端选择"></a>Minecraft服务端选择</h3><p>要我直接介绍我是说不清楚的，毕竟版本太多了，所以这里我引用一位知乎用户的回答作为讲解吧。<a href="https://www.zhihu.com/question/46881255/answer/109917528" target="_blank" rel="noopener">文章地址</a><br>请各位认真看这位用户讲解，然后选择自己认为适合的服务端。</p>
+<p>后续我们需要将Minecraft的服务端（后缀为.jar)上传至服务器，所以我们需要一个FTP协议的传输工具<br>Windows下可以用FileZilla（开源，免费，中文）<br><a href="https://filezilla-project.org/" target="_blank" rel="noopener">FileZilla官网</a><br>这网站我很卡，所以我直接百度下载的2333。</p>
+<h3 id="Minecraft服务端选择"><a href="#Minecraft服务端选择" class="headerlink" title="Minecraft服务端选择"></a>Minecraft服务端选择</h3><p>要我直接介绍我是说不清楚的，毕竟版本太多了，所以这里我引用一位知乎用户的回答作为讲解吧。<a href="https://www.zhihu.com/question/46881255/answer/109917528" target="_blank" rel="noopener">文章地址</a><br>请各位认真看这位用户讲解，然后选择自己认为适合的服务端。<br>国内服务端搬运<a href="http://www.mcbbs.net/" target="_blank" rel="noopener">mcbbs</a></p>
 <h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><p>需要的东西我们都准备的差不多了，那么我们就开始干吧。<br>第一步当然是连接到我们的云服务器了<br>打开你的xshell，点击新站点，输入你服务器提供商给你的信息，然后连接，成功后一般会有提示字符。</p>
 <h3 id="基础环境部署"><a href="#基础环境部署" class="headerlink" title="基础环境部署"></a>基础环境部署</h3><p>我们是做Minecraft服务器，而他是java写的，所以当然免不了java啦。<br>输入下列指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br></pre></td></tr></table></figure></p>
 <p>这是用来检查java版本的命令，如果显示出了目前版本就证明你已经安装了，就可以去下一步了。<br>但如果没有安装，请输入下列指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install oracle-java8-installer</span><br></pre></td></tr></table></figure></p>
@@ -191,8 +191,18 @@
 <p>如果软件成功启动，你会发现你的xshell之前输入的命令记录没了，因为你进了个新的会话。<br>接着输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Minecraft </span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure></p>
 <p>确定服务端文件列出来之后，我们在输入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo java -Xms<span class="comment"># -Xmx# -jar name.jar nogui</span></span><br></pre></td></tr></table></figure></p>
 <p>这里解释一下命令的意思</p>
-<h3 id="Xms-初始启动分配的内存（-Xms2048m）"><a href="#Xms-初始启动分配的内存（-Xms2048m）" class="headerlink" title="-Xms# - 初始启动分配的内存（-Xms2048m）"></a>-Xms# - 初始启动分配的内存（-Xms2048m）</h3><h3 id="Xmx-最大分配的内存（-Xmx3096m）"><a href="#Xmx-最大分配的内存（-Xmx3096m）" class="headerlink" title="-Xmx# - 最大分配的内存（-Xmx3096m）"></a>-Xmx# - 最大分配的内存（-Xmx3096m）</h3><h3 id="name–-下载的Minecraft服务端名字-jar前面的部分"><a href="#name–-下载的Minecraft服务端名字-jar前面的部分" class="headerlink" title="name– 下载的Minecraft服务端名字.jar前面的部分"></a>name– 下载的Minecraft服务端名字.jar前面的部分</h3><h3 id="nogui-–-用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除-nogui-选项。"><a href="#nogui-–-用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除-nogui-选项。" class="headerlink" title="nogui – 用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除 nogui 选项。"></a>nogui – 用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除 nogui 选项。</h3><p>等待出现done！的时候，就说明服务器启动完毕了。</p>
-<h3 id="登录到服务器"><a href="#登录到服务器" class="headerlink" title="登录到服务器"></a>登录到服务器</h3><p>打开Minecraft客户端，在多人游戏里填入你的服务器公网ip，然后就可以进入服务器了（如果没信号，请确定你的服务器已经启动，而且服务器网络类型不要是专享网络，如果是请自信配置）。<br>那么本教程到此结束，祝大家游戏愉快。<br><a href="https://linux.cn/article-8140-1.html" target="_blank" rel="noopener">部分指令参考文章</a></p>
+<ul>
+<li><p>-Xms# - 初始启动分配的内存（-Xms2048m）</p>
+</li>
+<li><p>-Xmx# - 最大分配的内存（-Xmx3096m）</p>
+</li>
+<li><p>name– 下载的Minecraft服务端名字.jar前面的部分</p>
+</li>
+<li><p>nogui – 用于以基于文本的界面来显示，可以减少内存使用。如果你使用图形化界面，那么移除 nogui 选项。<br>等待出现done！的时候，就说明服务器启动完毕了。</p>
+<h3 id="登录到服务器"><a href="#登录到服务器" class="headerlink" title="登录到服务器"></a>登录到服务器</h3><p>打开Minecraft客户端，在多人游戏里填入你的服务器公网ip，然后就可以进入服务器了（如果没信号，请确定你的服务器已经启动，而且服务器网络类型不要是专享网络，如果是请自信配置）。<br>那么本教程到此结束，祝大家游戏愉快。</p>
+<h3 id="文章参考网站"><a href="#文章参考网站" class="headerlink" title="文章参考网站"></a>文章参考网站</h3></li>
+<li><a href="https://linux.cn/article-8140-1.html" target="_blank" rel="noopener">部分指令参考文章</a></li>
+</ul>
 
     </div>
 
@@ -233,6 +243,10 @@
     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
         <h2>Recent Posts</h2>
         <ul>
+            
+            <li>
+                <a class="footer-post" href="/2018/02/20/Minecraft的设定及添加插件于mod/">Minecraft服务器的设定及添加插件与mod</a>
+            </li>
             
             <li>
                 <a class="footer-post" href="/2018/02/18/如何搭建一个Minecraft服务器-1/">如何搭建一个Minecraft服务器</a>
